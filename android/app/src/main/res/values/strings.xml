@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GM-score-counter</string>
+    <string name="title_activity_main">GM-score-counter</string>
+    <string name="package_name">com.devpartner.gmcounter</string>
+    <string name="custom_url_scheme">com.devpartner.gmcounter</string>
+</resources>
