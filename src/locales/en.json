@@ -1,0 +1,21 @@
+{
+  "appTitle": "GM Score counter",
+  "level": "Level",
+  "gear": "Gear",
+  "addLevel": "Add Level",
+  "removeLevel": "Remove Level",
+  "addGear": "Add Gear",
+  "removeGear": "Remove Gear",
+  "totalPower": "Total Power",
+  "resourceGrain": "Grain",
+  "resourceFence": "Fence",
+  "resourceRoom": "Room",
+  "currentLevel": "Current level",
+  "currentGear": "Current gear",
+  "keptStations": "Kept Station",
+  "routeLength": "{lng} length routes",
+  "scoredRoutes": "Scored completed route",
+  "addRoutes": "Add Completed Route",
+  "totalScore": "Total Score",
+  "scoredRoute": "{point}-point route"
+}

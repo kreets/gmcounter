@@ -4,7 +4,7 @@ export default (await import('vue')).defineComponent({
         const route = useRoute();
         const router = useRouter();
         const gameName = route.params?.name || 'Score Counter';
-        const games = ['TicketToRide', 'Agricola'];
+        const games = ['Munchkin', 'TicketToRide', 'Agricola'];
         const selectGame = (game) => {
             router.push({ name: 'GameCounter', params: { name: game } });
         };

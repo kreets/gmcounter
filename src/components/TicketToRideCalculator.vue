@@ -46,7 +46,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <th>Total Score</th>
+          <th>{{$t('totalScore')}}</th>
           <th colspan="2">{{ totalScore }}</th>
         </tr>
       </tfoot>
@@ -55,11 +55,11 @@
     <select class="form-select" v-model="selectedRoute">
       <option disabled value="">Select completed route</option>
       <option v-for="route in availableRoutes" :key="route.name" :value="route">
-        {{ route.name }} ({{ route.points }} points)
+        {{ route.name }}
       </option>
     </select>
     <button class="btn btn-outline-secondary" type="button" @click="addCompletedRoute">
-      Add Completed Route
+      {{$t('addRoutes')}}
     </button>
   </div>
 </template>
@@ -68,75 +68,81 @@
 export default {
   data() {
     return {
-      scoreItems: [
-	    {
-          name: 'Route length 1',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity
-          },
-        },
-		    {
-          name: 'Route length 2',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity*2
-          },
-        },
-        {
-          name: 'Route length 3',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity*4
-          },
-        },
-        {
-          name: 'Route length 4',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity*7
-          },
-        },
-        {
-          name: 'Route length 5',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity*10
-          },
-        },
-        {
-          name: 'Route length 6',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity*15
-          },
-        },
-        {
-          name: 'Kept Station',
-          quantity: 0,
-          calculateScore: (quantity) => {
-            if (quantity === 0) return 0
-            return quantity*4
-          },
-        },
-      ],
-      availableRoutes: [
-        { name: '20-point route', points: 20 },
-        { name: '10-point route', points: 10 },
-        { name: '7-point route', points: 7 },
-        { name: '5-point route', points: 5 },
-      ],
+      scoreItems: [],
+      availableRoutes: [],
       completedRoutes: [],
       selectedRoute: '',
     }
   },
   computed: {
+      translatedScoreItems() {
+        return [
+          {
+            name: this.$t('routeLength', { lng: 1 }),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0;
+              return quantity;
+            },
+          },
+          {
+            name: this.$t('routeLength', { lng: 2 }),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0;
+              return quantity * 2;
+            },
+          },
+          {
+            name: this.$t('routeLength', { lng: 3 }),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0
+              return quantity*4
+            },
+          },
+          {
+            name: this.$t('routeLength', { lng: 4 }),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0
+              return quantity*7
+            },
+          },
+          {
+            name: this.$t('routeLength', { lng: 5 }),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0
+              return quantity*10
+            },
+          },
+          {
+            name: this.$t('routeLength', { lng: 6 }),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0
+              return quantity*15
+            },
+          },
+          {
+            name: this.$t('keptStations'),
+            quantity: 0,
+            calculateScore: (quantity) => {
+              if (quantity === 0) return 0
+              return quantity*4
+            },
+          }
+        ];
+      },
+    translatedScoredRoutes() {
+      return [
+        { name: this.$t('scoredRoute', {'point': '20'}), points: 20 },
+        { name: '10-point route', points: 10 },
+        { name: '7-point route', points: 7 },
+        { name: '5-point route', points: 5 },
+      ];
+    },
     totalScore() {
       const baseScore = this.scoreItems.reduce(
           (total, item) => total + item.calculateScore(item.quantity),
@@ -148,6 +154,11 @@ export default {
       )
       return baseScore + routeScore
     },
+  },
+  mounted() {
+    // Initialize scoreItems with translated values
+    this.scoreItems = this.translatedScoreItems;
+    this.availableRoutes = this.translatedScoredRoutes;
   },
   methods: {
     increaseQuantity(index) {

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^6.1.2",
     "@capacitor/cli": "^6.1.2",
     "@capacitor/core": "^6.1.2",
     "@capacitor/ios": "^6.1.2",
@@ -16,6 +17,7 @@
     "pinia": "^2.2.2",
     "vite-plugin-pwa": "^0.20.1",
     "vue": "^3.4.37",
+    "vue-i18n": "^10.0.0-beta.5",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {

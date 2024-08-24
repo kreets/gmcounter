@@ -1,8 +1,9 @@
 import AgricolaCalculator from '../components/AgricolaCalculator.vue';
 import TicketToRideCalculator from '../components/TicketToRideCalculator.vue';
+import MunchkinCalculator from '../components/MunchkinCalculator.vue';
 export default (await import('vue')).defineComponent({
     components: {
-        AgricolaCalculator, TicketToRideCalculator
+        AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator
     },
     computed: {
         gameName() {
@@ -56,13 +57,29 @@ function __VLS_template() {
         // @ts-ignore
         [gameName,];
     }
+    if (__VLS_ctx.gameName === 'Munchkin') {
+        // @ts-ignore
+        const __VLS_12 = {}
+            .MunchkinCalculator;
+        ({}.MunchkinCalculator);
+        __VLS_components.MunchkinCalculator;
+        // @ts-ignore
+        [MunchkinCalculator,];
+        // @ts-ignore
+        const __VLS_13 = __VLS_asFunctionalComponent(__VLS_12, new __VLS_12({}));
+        const __VLS_14 = __VLS_13({}, ...__VLS_functionalComponentArgsRest(__VLS_13));
+        ({}({}));
+        const __VLS_17 = __VLS_nonNullable(__VLS_pickFunctionalComponentCtx(__VLS_12, __VLS_14));
+        // @ts-ignore
+        [gameName,];
+    }
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
         __VLS_styleScopedClasses['game-counter'];
     }
     var __VLS_slots;
     return __VLS_slots;
     const __VLS_componentsOption = {
-        AgricolaCalculator, TicketToRideCalculator
+        AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator
     };
     const __VLS_name = undefined;
     let __VLS_internalComponent;

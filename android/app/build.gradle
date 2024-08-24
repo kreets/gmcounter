@@ -5,7 +5,7 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.devpartner.gmcounter"
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"

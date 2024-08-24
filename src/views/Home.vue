@@ -18,7 +18,7 @@
 export default {
   data() {
     return {
-      games: ['TicketToRide', 'Agricola'],
+      games: ['TicketToRide', 'Agricola', 'Munchkin'],
     }
   },
   methods: {
