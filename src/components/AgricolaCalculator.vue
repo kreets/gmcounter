@@ -1,5 +1,5 @@
 <template>
-    <table class="table table-bordered">
+    <table class="table table-bordered" :class="{ 'table-dark': themeState.isDarkMode }">
       <thead>
         <tr>
           <th scope="col">Item</th>
@@ -46,7 +46,11 @@
 </template>
 
 <script>
+import { themeState } from '../theme';
 export default {
+  setup() {
+    return { themeState };
+  },
   data() {
     return {
       scoreItems: [

@@ -1,4 +1,8 @@
+import { themeState } from '../theme';
 export default (await import('vue')).defineComponent({
+    setup() {
+        return { themeState };
+    },
     data() {
         return {
             scoreItems: [
@@ -194,10 +198,13 @@ function __VLS_template() {
     // CSS variable injection 
     // CSS variable injection end 
     let __VLS_resolvedLocalAndGlobalComponents;
-    __VLS_elementAsFunction(__VLS_intrinsicElements.table, __VLS_intrinsicElements.table)({ ...{ class: ("table table-bordered") }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.table, __VLS_intrinsicElements.table)({ ...{ class: ("table table-bordered") }, ...{ class: (({ 'table-dark': __VLS_ctx.themeState.isDarkMode })) }, });
+    __VLS_styleScopedClasses = ({ 'table-dark': themeState.isDarkMode });
     __VLS_elementAsFunction(__VLS_intrinsicElements.thead, __VLS_intrinsicElements.thead)({});
     __VLS_elementAsFunction(__VLS_intrinsicElements.tr, __VLS_intrinsicElements.tr)({});
     __VLS_elementAsFunction(__VLS_intrinsicElements.th, __VLS_intrinsicElements.th)({ scope: ("col"), });
+    // @ts-ignore
+    [themeState,];
     __VLS_elementAsFunction(__VLS_intrinsicElements.th, __VLS_intrinsicElements.th)({ scope: ("col"), });
     __VLS_elementAsFunction(__VLS_intrinsicElements.th, __VLS_intrinsicElements.th)({ scope: ("col"), });
     __VLS_elementAsFunction(__VLS_intrinsicElements.tbody, __VLS_intrinsicElements.tbody)({});

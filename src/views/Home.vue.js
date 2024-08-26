@@ -1,7 +1,7 @@
 export default (await import('vue')).defineComponent({
     data() {
         return {
-            games: ['TicketToRide', 'Agricola', 'Munchkin'],
+            games: ['TicketToRide', 'Agricola', 'Munchkin', 'Twilight'],
         };
     },
     methods: {

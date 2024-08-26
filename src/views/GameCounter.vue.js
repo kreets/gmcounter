@@ -1,9 +1,10 @@
 import AgricolaCalculator from '../components/AgricolaCalculator.vue';
 import TicketToRideCalculator from '../components/TicketToRideCalculator.vue';
 import MunchkinCalculator from '../components/MunchkinCalculator.vue';
+import TwilightImperiumCalculator from '../components/TwilightImperiumCalculator.vue';
 export default (await import('vue')).defineComponent({
     components: {
-        AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator
+        AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator, TwilightImperiumCalculator
     },
     computed: {
         gameName() {
@@ -73,13 +74,29 @@ function __VLS_template() {
         // @ts-ignore
         [gameName,];
     }
+    if (__VLS_ctx.gameName === 'Twilight') {
+        // @ts-ignore
+        const __VLS_18 = {}
+            .TwilightImperiumCalculator;
+        ({}.TwilightImperiumCalculator);
+        __VLS_components.TwilightImperiumCalculator;
+        // @ts-ignore
+        [TwilightImperiumCalculator,];
+        // @ts-ignore
+        const __VLS_19 = __VLS_asFunctionalComponent(__VLS_18, new __VLS_18({}));
+        const __VLS_20 = __VLS_19({}, ...__VLS_functionalComponentArgsRest(__VLS_19));
+        ({}({}));
+        const __VLS_23 = __VLS_nonNullable(__VLS_pickFunctionalComponentCtx(__VLS_18, __VLS_20));
+        // @ts-ignore
+        [gameName,];
+    }
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
         __VLS_styleScopedClasses['game-counter'];
     }
     var __VLS_slots;
     return __VLS_slots;
     const __VLS_componentsOption = {
-        AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator
+        AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator, TwilightImperiumCalculator
     };
     const __VLS_name = undefined;
     let __VLS_internalComponent;

@@ -4,6 +4,7 @@
     <AgricolaCalculator v-if="gameName === 'Agricola'" />
     <TicketToRideCalculator v-if="gameName === 'TicketToRide'" />
     <MunchkinCalculator v-if="gameName === 'Munchkin'" />
+    <TwilightImperiumCalculator v-if="gameName === 'Twilight'" />
 
   </div>
 </template>
@@ -12,9 +13,10 @@
 import AgricolaCalculator from '../components/AgricolaCalculator.vue'
 import TicketToRideCalculator from '../components/TicketToRideCalculator.vue'
 import MunchkinCalculator from '../components/MunchkinCalculator.vue'
+import TwilightImperiumCalculator from '../components/TwilightImperiumCalculator.vue'
 export default {
   components: {
-    AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator
+    AgricolaCalculator, TicketToRideCalculator, MunchkinCalculator,TwilightImperiumCalculator
   },
   computed: {
     gameName() {

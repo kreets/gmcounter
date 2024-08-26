@@ -1,6 +1,6 @@
 <template>
   
-    <table class="table table-bordered">
+    <table class="table table-bordered" :class="{ 'table-dark': themeState.isDarkMode }">
       <thead>
         <tr>
           <th scope="col">Item</th>
@@ -52,7 +52,7 @@
       </tfoot>
     </table>
   <div class="input-group mb-3">
-    <select class="form-select" v-model="selectedRoute">
+    <select class="form-select form-control" v-model="selectedRoute">
       <option disabled value="">Select completed route</option>
       <option v-for="route in availableRoutes" :key="route.name" :value="route">
         {{ route.name }}
@@ -65,7 +65,9 @@
 </template>
 
 <script>
+import { themeState } from '../theme';
 export default {
+
   data() {
     return {
       scoreItems: [],
@@ -154,6 +156,9 @@ export default {
       )
       return baseScore + routeScore
     },
+  },
+  setup() {
+    return { themeState };
   },
   mounted() {
     // Initialize scoreItems with translated values
